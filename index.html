@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Merienda:wght@700&family=Roboto:ital,wght@1,100&display=swap"
+    rel="stylesheet">
+  <title>Froggy Calculator</title>
+  <link 
+    rel="icon" 
+    type="image/x-icon" 
+    href="images/favicon.png">
+  <link 
+    href="style.css" 
+    rel="stylesheet" 
+    type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="title">Froggy Calculator</h1>
+  </header>
+  <img 
+    class="bg-dragonfly hidden" 
+    src="images/dragonfly.png" 
+    alt="" />
+  <img 
+    class="bg-butterfly hidden" 
+    src="images/butterfly.png" 
+    alt="" />
+  <main class="container">
+    <img 
+      class="frog-img" 
+      src="images/frog.png" 
+      alt="Cute frog" />
+    <div id="display" class="calc-screen">0</div>
+    <div class="calc-bottom">
+      <div class="calc-bottom--row">
+        <button class="btn btn-square">7</button>
+        <button class="btn btn-square">8</button>
+        <button class="btn btn-square">9</button>
+        <button id="backspace" class="btn btn-square pink icon">
+          <img src="icons/backspace.svg" alt="Backspace icon" />
+        </button>
+      </div>
+      <div class="calc-bottom--row">
+        <button class="btn btn-square">4</button>
+        <button class="btn btn-square">5</button>
+        <button class="btn btn-square">6</button>
+        <button id="plus" class="btn btn-square icon">
+          <img src="icons/plus.svg" alt="Plus icon" />
+        </button>
+      </div>
+      <div class="calc-bottom--row">
+        <button class="btn btn-square">1</button>
+        <button class="btn btn-square">2</button>
+        <button class="btn btn-square">3</button>
+        <button id="minus" class="btn btn-square icon">
+          <img src="icons/minus.svg" alt="Minus icon" />
+        </button>
+      </div>
+      <div class="calc-bottom--row">
+        <button class="btn btn-square">.</button>
+        <button class="btn btn-square">0</button>
+        <button id="divide" class="btn btn-square icon">
+          <img src="icons/divide.svg" alt="Divide icon" />
+        </button>
+        <button id="times" class="btn btn-square icon">
+          <img src="icons/times.svg" alt="Times icon" />
+        </button>
+      </div>
+      <div class="calc-bottom--last">
+        <button id="clear" class="btn btn-rectangle pink clear-text">Clear</button>
+        <button id="equals" class="btn btn-rectangle light-green">
+          <img src="icons/frog-icon.svg" alt="Frog equal icon" />
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer class="credits">
+    Made by
+    <a href="https://github.com/ValentinaBS">Valentina</a>
+    &
+    <a href="https://github.com/ZoeC21">Zoe</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

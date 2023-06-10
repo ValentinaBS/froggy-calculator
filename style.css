@@ -1,0 +1,214 @@
+/* font-family: 'JetBrains Mono', monospace; weight: 400, 700, 800
+font-family: 'Merienda', cursive; weight: 700
+
+Primary Colors
+- Dark green (d-green - calculator background): #2B5023
+- Medium green (m-green - page background): #90BF79
+- Light green (l-green - special buttons): #B1D587
+- Shadow light green (sl-green - shadow special buttons): #9CBC76
+- Light pink (l-pink - erase buttons): #FFA1A1
+- Shadow light pink (sl-pink - shadow erase buttons): #EF8D8D
+
+Neutral
+- Dark text green (text-green - dark text): #435745
+- White (white - light text): #F5F5F5
+- Cream (cream - normal buttons): #EAE3DB
+- Shadow cream (s-cream - shadow for buttons): #B2A397
+*/
+
+:root {
+  --d-green: #2B5023;
+  --m-green: #90BF79;
+  --l-green: #B1D587;
+  --sl-green: #9CBC76;
+  --l-pink: #FFA1A1;
+  --sl-pink: #EF8D8D;
+  --text-green: #435745;
+  --white: #F5F5F5;
+  --cream: #EAE3DB;
+  --s-cream: #B2A397;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-green);
+}
+
+body {
+  background-image: url("images/background.png");
+  background-size: cover;
+}
+
+button {
+  border: none;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:focus {
+  outline: solid var(--l-green) 2px;
+  transform: scale(0.95);
+  font-weight: 600;
+}
+
+a {
+  color: var(--d-green);
+}
+
+.title {
+  color: var(--white);
+  font-family: 'Merienda', cursive;
+  text-shadow: 0 5px 8px var(--d-green);
+  margin: 20px;
+  font-size: 1.375em;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-screen,
+.calc-bottom {
+  background-color: var(--d-green);
+  width: 350px;
+  margin: 0 15px;
+  border-radius: 12px;
+}
+
+.calc-screen {
+  padding: 20px;
+  color: var(--white);
+  text-align: right;
+  font-size: 1.875em;
+  /* Firefox scrollbar */
+  overflow-x: auto;
+  scrollbar-color: var(--l-pink) var(--l-green);
+}
+
+/* Chrome scrollbar */
+::-webkit-scrollbar {
+  height: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--l-green);
+  margin-block: 0.25em;
+  border-radius: 0 0 12px 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--l-pink);
+  border-radius: 0 0 12px 12px;
+}
+
+.calc-bottom {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-top: 30px;
+}
+
+.calc-bottom--row {
+  display: flex;
+  column-gap: 17.5px;
+}
+
+.calc-bottom--last {
+  display: flex;
+  column-gap: 22px;
+}
+
+.btn-square,
+.btn-rectangle {
+  transition: all .1s ease-in-out;
+  background-color: var(--white);
+  border-bottom: 4px solid var(--s-cream);
+}
+
+.btn-square {
+  width: 64px;
+  height: 64px;
+  font-size: 1.25em;
+}
+
+.btn-square:hover {
+  background-color: var(--l-green);
+  border-bottom: 4px solid var(--l-green);
+}
+
+.btn-rectangle {
+  width: 50%;
+}
+
+.pink {
+  background-color: var(--l-pink);
+  border-bottom: 4px solid var(--sl-pink);
+}
+
+.pink:hover {
+  background-color: var(--sl-pink);
+  border-bottom: 4px solid var(--sl-pink);
+}
+
+.light-green {
+  background-color: var(--l-green);
+  border-bottom: 4px solid var(--sl-green);
+}
+
+.light-green:hover {
+  background-color: var(--sl-green);
+  border-bottom: 4px solid var(--sl-green);
+}
+
+.icon {
+  padding: 0.9em;
+}
+
+.clear-text {
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 1.25em;
+}
+
+.credits {
+  text-align: center;
+  margin: 30px 0;
+  color: var(--d-green);
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    text-align: left;
+    font-size: 2em;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .bg-dragonfly,
+  .bg-butterfly {
+    position: absolute;
+    z-index: -1;
+    top: 17rem;
+  }
+
+  .bg-butterfly {
+    right: 0rem;
+    top: 10rem;
+  }
+}
